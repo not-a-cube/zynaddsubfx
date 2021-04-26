@@ -32,7 +32,7 @@
        rBOIL_END }
 #define rEffParTF(name, idx, ...) \
   {STRINGIFY(name) "::T:F",  rProp(parameter) rDefaultDepends(preset) \
-   DOC(__VA_ARGS__), NULL, rEffParTFCb(idx)}
+   rLinear(0,127) DOC(__VA_ARGS__), NULL, rEffParCb(idx)}
 #define rEffParCb(idx) \
     [](const char *msg, rtosc::RtData &d) {\
         rObject &obj = *(rObject*)d.obj; \
